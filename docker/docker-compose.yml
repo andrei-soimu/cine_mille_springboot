@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:8
+    restart: unless-stopped
+    mem_limit: 512m
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=8vN7QC5USvbwRu5a4FOs
+      - MYSQL_USER=cine
+      - MYSQL_PASSWORD=y3XWVTVGrpQpyXdqmxGq
+      - MYSQL_DATABASE=db_cine_mille
+    volumes:
+      - ./dump:/docker-entrypoint-initdb.d

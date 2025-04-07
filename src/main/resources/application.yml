@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: CineMille
+  config:
+    activate:
+      on-profile: dev
+  # MySQL
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_
+    username:
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        highlight_sql: true
+    hibernate:
+      ddl-auto: update
+# Spring Logging [Log levels: TRACE -> DEBUG -> INFO -> WARN -> ERROR]
+logging:
+  level:
+    root: info
+    org.hibernate.type: info
+    org.hibernate.stat: info
+# Server Configuration
+server:
+  error:
+    include-message: always
+  port: 8080
+cors:
+  allowed-origins: http://localhost:4200
+  allowed-methods: GET,POST,OPTIONS
+  allowed-headers: "*"
+  allow-credentials: true
+jwt:
+  authentication-header: X-Authentication
+  secret-key:
+database-init: false
+---
